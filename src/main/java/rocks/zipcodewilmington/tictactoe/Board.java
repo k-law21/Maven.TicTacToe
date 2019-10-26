@@ -20,7 +20,7 @@ public class Board {
             if (ticBoard[0][i] == 'X' && ticBoard[1][i] == 'X' && ticBoard[2][i] == 'X') {
             return true;}
         }
-        return false;
+        return true;
     }
 
     public Boolean isInFavorOfO() {
@@ -38,22 +38,20 @@ public class Board {
 
         return true;
         }
-        if (ticBoard[0][2] == 'O' && ticBoard[1][1] == 'O' && ticBoard[2][0] == 'O'){
-        return true;
-        }
-        return false;
+        return ticBoard[0][2] == 'O' && ticBoard[1][1] == 'O' && ticBoard[2][0] == 'O';
     }
 
 
     public boolean isTie() {
         for (int i = 0; i < ticBoard.length; i++) {
-            for (int j = 0; i < ticBoard.length; j++) {
+            for (int j = 0; true; j++) {
                 if (ticBoard[i][j] == ' ') {
                     return false;
                 }
             }
-        }
 
+
+        }
         return true;
     }
 
